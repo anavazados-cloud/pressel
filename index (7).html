@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Amor da Sua Vida</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:40px 15px;background:linear-gradient(135deg,#f41f1f,#f250dc)}
+.card{width:100%;max-width:370px;background:#fff;border-radius:20px;padding:20px 25px 25px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.1)}
+.pic-wrap{margin-top:-70px;margin-bottom:15px;display:inline-block;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff38ca,#f29e38)}
+.pic{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #fff;display:block}
+.name{font-size:22px;font-weight:700;color:#333;margin-bottom:8px}
+.status{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;margin-bottom:15px;background:#e6f7ea;border-radius:20px;font-size:13px;color:#2e7d32}
+.status::before{content:'';width:8px;height:8px;background:#4CAF50;border-radius:50%}
+.loc{color:#888;font-size:14px;margin-bottom:20px;display:none}
+.loc.show{display:flex;align-items:center;justify-content:center;gap:5px}
+.phrase{font-size:17px;font-weight:500;color:#333;line-height:1.4;margin-bottom:25px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;margin-bottom:12px;color:#fff;box-shadow:0 4px 10px rgba(0,0,0,.1);transition:opacity .2s}
+.btn:last-child{margin-bottom:0}
+.btn:hover{opacity:.9}
+.btn svg,.btn img{flex-shrink:0}
+.footer{margin-top:20px;font-size:9px;color:#aaa;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="pic-wrap"><img src="https://i.imgur.com/0rOEgct.png" alt="Amor da Sua Vida" class="pic" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22110%22 height=%22110%22><rect fill=%22%23ddd%22 width=%22110%22 height=%22110%22/></svg>'"></div>
+<div class="name">Amor da Sua Vida</div>
+<div class="status">online</div>
+<div class="loc" id="loc"><span>📍</span><span id="lt">Carregando...</span></div>
+<div class="phrase">Vem aqui 👇🏻</div>
+<a href="https://telegram.me/faveladasgpbot" class="btn" style="background-color:#27a6e6" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span></a>
+<p class="footer">Todos os direitos de imagem reservados a Amor da Sua Vida sob a Lei n 9.610/98</p>
+</div>
+<script>
+fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{if(d.city&&d.region){document.getElementById('lt').textContent='Moro em '+d.city+' - '+d.region;document.getElementById('loc').classList.add('show')}}).catch(()=>{})
+</script>
+</body>
+</html>
